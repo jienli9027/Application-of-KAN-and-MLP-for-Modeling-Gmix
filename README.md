@@ -28,6 +28,6 @@ Date: July 2025
 - Both models are tested for their ability to fit \( g_{ex} \) and its derivatives.
 
 ### Key Findings
-- MLP yields better predictions of derivatives (e.g., \( \partial g / \partial x \), \( \partial g / \partial T \)) and satisfies Gibbs–Duhem relation more accurately.
+- MLP yields better predictions of derivatives and satisfies Gibbs–Duhem relation more accurately.
 - KAN achieves higher accuracy for \( g_{ex} \) in data-scarce scenarios, but with less accurate derivative behavior.
 - ReLU-type activation functions are **not suitable** due to zero second derivatives, which conflict with thermodynamic consistency requirements.

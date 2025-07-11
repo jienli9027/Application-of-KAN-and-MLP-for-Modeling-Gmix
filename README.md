@@ -1,6 +1,6 @@
 # Application of Kolmogorov-Arnold and Deep Neural Networks for Modeling Gibbs Free Energy of Mixing Modified by Global Renormalization Group Theory
 
-Author: Ji-En, Lo (羅翊心)
+Author: Ji-En, Li
 Institution: Department of Chemical Engineering, National Tsing Hua University
 Date: July 2025
 # Overview

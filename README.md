@@ -1,4 +1,4 @@
-# Ji-En-Li
+# Application of Kolmogorov-Arnold and Deep Neural Networks for Modeling Gibbs Free Energy of Mixing Modified by Global Renormalization Group Theory
 
 Traditional local composition models are commonly used to describe phase separation in multi-component mixtures. However, these models have limitations near the critical point. Global Renormalization Group Theory (GRGT) can transform classical mean-field theory to include long-range fluctuations. This method can be applied to convert various local composition models so that the correlation length follows nonclassical
 scaling laws as the temperature approaches the critical point described by mean-field theory. This means that near the critical point, the way the correlation length changes with temperature deviates from classical predictions and follows a specific behavior. However, this method did not provide a closed-form expression for the Gibbs free energy of mixing as a function of temperature and mole fraction.

@@ -8,7 +8,7 @@ Date: July 2025
 ### Background
 - Traditional local composition models are widely used to model phase separation in multicomponent mixtures.
 - However, they fail to capture long-range fluctuation effects near the critical point.
-- GRGT transforms mean-field theory to include these fluctuations, ensuring that the correlation length obeys nonclassical scaling laws as \( T \rightarrow T_c \).
+- GRGT transforms mean-field theory to include these fluctuations, ensuring that the correlation length obeys nonclassical scaling laws.
 
 ### Challenge
 - GRGT does **not** yield a closed-form expression for the Gibbs free energy of mixing \( g_{mix}(x, T) \).

@@ -1,10 +1,33 @@
 # Application of Kolmogorov-Arnold and Deep Neural Networks for Modeling Gibbs Free Energy of Mixing Modified by Global Renormalization Group Theory
 
-Traditional local composition models are commonly used to describe phase separation in multi-component mixtures. However, these models have limitations near the critical point. Global Renormalization Group Theory (GRGT) can transform classical mean-field theory to include long-range fluctuations. This method can be applied to convert various local composition models so that the correlation length follows nonclassical
-scaling laws as the temperature approaches the critical point described by mean-field theory. This means that near the critical point, the way the correlation length changes with temperature deviates from classical predictions and follows a specific behavior. However, this method did not provide a closed-form expression for the Gibbs free energy of mixing as a function of temperature and mole fraction.
+Author: Ji-En, Lo (羅翊心)
+Institution: Department of Chemical Engineering, National Tsing Hua University
+Date: July 2025
+# Overview
 
-Neural networks are known to be universal approximators of any continuous functions.  Hence, it is expected that they can be used to develope a surrogate differential model for Gibbs free energy of mixing modified by GRGT.Multi-layer perceptron (MLP) network is perhaps the most common form of neural network used in function approximation.  Recently, a special neural network known as the Kolmogorov-Arnold Network (KAN) has also been proposed. In this study, both KAN and MLP were used to approximate the excess Gibbs free energy data obtained after applying the GRGT process.  These surrogates were applied to phase equilibrium calculations.
+### Background
+- Traditional local composition models are widely used to model phase separation in multicomponent mixtures.
+- However, they fail to capture long-range fluctuation effects near the critical point.
+- GRGT transforms mean-field theory to include these fluctuations, ensuring that the correlation length obeys nonclassical scaling laws as \( T \rightarrow T_c \).
 
-Two examples, a two-suffix Margules model and a non-random-two-liquid (NRTL) model were used to demonstrate the feasibility of this procedure.  Although the excess Gibbs free energy can be closely approximated by the surrogate model, this does not inherently ensure that its temperature and compositional derivatives are equally well captured.  Since the surrogate excess Gibbs free energy model has to be used in phase equilibrium calculations, it is necessary to guarantee good approximation of their compositional and temperature derivatives.
+### Challenge
+- GRGT does **not** yield a closed-form expression for the Gibbs free energy of mixing \( g_{mix}(x, T) \).
+- This makes it difficult to directly compute phase equilibria using classical methods.
 
-Moreover, KAN provides a better approximation of the Gibbs excess free energy model when training data are scarce, but the derivates are inferior to those of MLP, which also gives better Gibbs-Duhem consistency.  However, piecewise linear activation function such as rectified linear unit (ReLU) cannot be used since their derivatives are zero.
+### Solution: Surrogate Modeling via Neural Networks
+- Neural networks are used to approximate the GRGT-modified excess Gibbs free energy \( g_{ex}^{RG} \).
+- The surrogate models are differentiable and allow accurate computation of thermodynamic derivatives.
+- Two neural network architectures are tested:
+  - **Multi-Layer Perceptron (MLP)**
+  - **Kolmogorov–Arnold Network (KAN)**
+
+### Applications
+- The surrogate models are applied to compute liquid–liquid equilibrium using:
+  - Two-suffix Margules model
+  - Non-Random Two-Liquid (NRTL) model
+- Both models are tested for their ability to fit \( g_{ex} \) and its derivatives.
+
+### Key Findings
+- MLP yields better predictions of derivatives (e.g., \( \partial g / \partial x \), \( \partial g / \partial T \)) and satisfies Gibbs–Duhem relation more accurately.
+- KAN achieves higher accuracy for \( g_{ex} \) in data-scarce scenarios, but with less accurate derivative behavior.
+- ReLU-type activation functions are **not suitable** due to zero second derivatives, which conflict with thermodynamic consistency requirements.
